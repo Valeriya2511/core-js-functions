@@ -117,7 +117,7 @@ function memoize(func) {
   let cache = null;
   let hasRun = false;
 
-  return function () {
+  return () => {
     if (!hasRun) {
       cache = func();
       hasRun = true;
@@ -142,7 +142,7 @@ function memoize(func) {
  * retryer() => 2
  */
 function retry(func, attempts) {
-  return function () {
+  return () => {
     let attempt = 0;
     while (attempt < attempts) {
       try {
